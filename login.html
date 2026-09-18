@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kappa Official - Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 6%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #22c55e;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 450px;
+      margin: 50px auto;
+      background: white;
+      padding: 35px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .signup {
+      text-align: center;
+      margin-top: 20px;
+      color: #64748b;
+    }
+
+    .signup a {
+      color: #166534;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: auto;
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Kappa <span>Official</span></div>
+  </header>
+
+  <div class="container">
+
+    <h1>Welcome Back</h1>
+
+    <p class="intro">
+      Log in to your Kappa Official account
+    </p>
+
+    <form onsubmit="loginDemo(event)">
+
+      <label for="role">I am a:</label>
+
+      <select id="role" required>
+        <option value="">Choose account type</option>
+        <option value="customer">Customer</option>
+        <option value="trader">Trader</option>
+        <option value="rider">Rider</option>
+      </select>
+
+      <label for="email">Email address</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label for="password">Password</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        required
+      >
+
+      <button type="submit">Log In</button>
+
+    </form>
+
+    <div class="signup">
+      Don't have an account?
+      <a href="#">Create Account</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Kappa Official</p>
+  </footer>
+
+  <script>
+    function loginDemo(event) {
+      event.preventDefault();
+
+      const role = document.getElementById("role").value;
+
+      if (role === "customer") {
+        window.location.href = "customer.html";
+      } else if (role === "trader") {
+        window.location.href = "trader.html";
+      } else if (role === "rider") {
+        window.location.href = "rider.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
