@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kappa Official - Create Account</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f9fc;
+      color: #172033;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 18px 6%;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #22c55e;
+    }
+
+    .container {
+      width: 92%;
+      max-width: 480px;
+      margin: 40px auto;
+      background: white;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .intro {
+      text-align: center;
+      color: #64748b;
+      margin-bottom: 28px;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: bold;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 13px;
+      margin-bottom: 18px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      background: #22c55e;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 20px;
+      color: #64748b;
+    }
+
+    .login a {
+      color: #166534;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: auto;
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">Kappa <span>Official</span></div>
+  </header>
+
+  <div class="container">
+
+    <h1>Create Account</h1>
+
+    <p class="intro">
+      Join Kappa Official as a customer, trader or rider.
+    </p>
+
+    <form onsubmit="createAccount(event)">
+
+      <label for="role">I want to join as:</label>
+
+      <select id="role" required>
+        <option value="">Choose account type</option>
+        <option value="customer">Customer</option>
+        <option value="trader">Trader</option>
+        <option value="rider">Rider</option>
+      </select>
+
+      <label for="name">Full name</label>
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Enter your full name"
+        required
+      >
+
+      <label for="email">Email address</label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your email"
+        required
+      >
+
+      <label for="phone">Phone number</label>
+
+      <input
+        type="tel"
+        id="phone"
+        placeholder="e.g. 0712345678"
+        required
+      >
+
+      <label for="password">Password</label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Create a password"
+        minlength="6"
+        required
+      >
+
+      <button type="submit">Create Account</button>
+
+    </form>
+
+    <div class="login">
+      Already have an account?
+      <a href="login.html">Log In</a>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Kappa Official</p>
+  </footer>
+
+  <script>
+    function createAccount(event) {
+      event.preventDefault();
+
+      const role = document.getElementById("role").value;
+
+      alert("Account registration is ready for the next setup stage!");
+
+      if (role === "customer") {
+        window.location.href = "customer.html";
+      } else if (role === "trader") {
+        window.location.href = "trader.html";
+      } else if (role === "rider") {
+        window.location.href = "rider.html";
+      }
+    }
+  </script>
+
+</body>
+</html>
